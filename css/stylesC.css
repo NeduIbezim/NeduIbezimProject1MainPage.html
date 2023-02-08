@@ -1,0 +1,25 @@
+
+
+
+  .relative {
+    position: relative;
+    width: 95%;
+    height: auto;
+    padding: 5px;
+    background-color: rgb(180, 211, 252);
+    margin-bottom: 12px;
+    border: 15px solid rgb(57, 192, 255);
+    border-style: ridge;
+}
+
+
+.relative2 {
+    position: relative;
+    width: 95%;
+    height: auto;
+    padding: 5px;
+    background-color: rgb(247, 207, 204);
+    margin-bottom: 12px;
+    border: 12px solid rgb(177, 65, 0);
+    border-style:inset;
+}
