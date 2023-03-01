@@ -1,0 +1,55 @@
+.pagebackground{
+    background-color: #fffbe5;
+}
+
+.TwoDArt{
+    font-size:larger;
+    font-family:  "Comic Sans MS", "Comic Sans", cursive;
+    position: relative; 
+    bottom: -100px; 
+    
+
+}
+
+.WebPages{
+    font-size:larger;
+    font-family:  "Comic Sans MS", "Comic Sans", cursive;
+    position: relative; 
+    bottom: -100px; 
+    
+
+}
+
+
+#EleTest {
+    position: absolute;
+}
+
+ /* 
+.element {   
+    background-color: #16a085;
+    color: white;
+    width: 500px; 
+    height: 300px;
+    margin: 300px 20px;
+    text-align:center;
+    shape-inside: polygon(0 0,  500px 0, 350px 300px, 150px 300px);
+    shape-padding: 20px;
+    transition: all 2.5s ease; 
+    -webkit-clip-path: polygon(0 0,  500px 0, 350px 1500px, 150px 200px);
+  } 
+ .element2 {
+    transform: scale(50);
+    shape-inside: polygon(150px 0, 350px 0, 500px 300px, 0px 300px);
+      
+    color: rgb(255, 238, 0);
+   shape-inside: circle(50%, 50%, 50%);
+    -webkit-clip-path: circle(50%, 50%, 50%);
+     -webkit-clip-path: polygon(150px 0, 350px 0, 500px 300px, 0px 300px);
+    
+    
+  } 
+*/
+  
+
+  

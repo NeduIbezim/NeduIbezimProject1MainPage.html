@@ -4,44 +4,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/ProjectOneMainPage.css">
-    <script src="ProjectOneMainPage" src="JSProjectOneMainPage"></script>
+    <script src="ProjectOneMainPage.css" src="JSProjectOneMainPage"></script>
     
-<!--Notes:
-    delay the loading of the page and play the animation first-->
+
     <title>Project one</title>
     
-
-
-    </head>
-    <center><h1>Thrmax Productions</h1></center> 
-
-     
-         <body class="pagebackground">
-
-        <div>
-             
-           
-
-         
-    
-
-
-    
-        
-       
-
 
 
        <style>
         /* Define the animation */
         @keyframes elementAnimated {
           0% { transform: scale(1); }
-          50% { transform: scale(200);}
+          50% { transform: scale(100);}
           100% { transform: scale(200);}
+          
         }
         /* Apply the animation to a class */
         .animate {
-          animation: elementAnimated 2s ease-in;
+          animation: elementAnimated 2s ease-out;
         }
         /* Define the polygon */
         .element {
@@ -50,43 +30,154 @@
     width: 500px; 
     height: 300px;
     margin: 300px 20px;
+    transition: 0.5s ease; 
     text-align:center;
     
     shape-padding: 20px;
     
-    -webkit-clip-path: polygon(0 0,  500px 0, 350px 1500px, 150px 200px);
+    -webkit-clip-path: polygon(0 0,  500px 0, 350px 500px, 150px 200px);
+        }
+
+        .element:hover{
+            background-color: #2ac4af;
+            color: rgb(245, 255, 99);
+        
+            cursor: pointer;
+        }
+        .element:hover{
+        
+            rotate: 30deg ;
+     
         }
 
 
+        .hidden {
+            display: hidden;
+        }
 
       </style>
     </head>
-    <body>
-      <div class="element" onclick="playAnimation()">
     
+    
+    <body class="pagebackground">
+      <center><h1 style="font-family: cursive; font-size: 40px; color: rgb(187, 127, 255);">Thrmax Productions</h1></center> 
+
+        <div>
+
+    </head>
+    <body>
+      <div class="element" style="position: relative" onclick="playAnimation()">
+   
         <div class="TwoDArt" style="font-size:30px">
             2D Artwork
-
-  
-   
-   
-   </div>
-    
-    
-    
+        </div>
     </div>
+
+
+    
+    
       <script>
         function playAnimation() {
           var element = document.querySelector(".element");
+          var textElem = document.querySelector(".TwoDArt");
+          textElem.classList.add('.hidden');
           element.classList.add("animate");
           // Wait for the animation to finish
           setTimeout(function() {
             // Load another page
-            window.location.href = "another_page.html";
-          }, 2000); // Wait for 2 seconds (the same duration as the animation)
+            
+            window.location.href = "WebPageHub.html";
+          }, 500); // Wait for 2 seconds (the same duration as the animation)
         }
       </script>
-  
+
+
+
+
+
+
+
+      <!-- WebPages-------------------------------------------------------------- -->
+      
+
+    <div id="EleTest">
+      <style>
+        /* Define the animation */
+        @keyframes WebpageAnimated {
+          0% { transform: scale(1); }
+          50% { transform: scale(200);}
+          100% { transform: scale(200);}
+          
+        }
+
+        @keyframes WebpageShrink {
+          0% { transform: scale(1); }
+          50% { transform: scale(0);}
+          100% { transform: scale(0);}
+          
+        }
+        /* Apply the animation to a class */
+        .animate {
+          animation: WebpageAnimated 2s ease-out;
+        }
+        /* Define the polygon */
+        .Webpage {
+            background-color: hsl(59, 100%, 78%);
+    color: white;
+    width: 500px; 
+    height: 300px;
+    margin: 500px 200px;
+    transition:all 0.1s ease; 
+    text-align:center;
+    position: relative;
+    
+    shape-padding: 20px;
+    
+    -webkit-clip-path: polygon(0 0,  500px 0, 350px 500px, 150px 200px);
+        }
+
+        .Webpage:hover{
+            background-color: #fffb15;
+            color: rgb(180, 99, 255);
+        
+            cursor: pointer;
+        }
+        .Webpage:hover{
+       
+            rotate: 30deg ;
+     
+        }
+
+
+        .hidden {
+            display: hidden;
+        }
+
+      </style>
+      </div>
+    </head>
+   
+      <script>
+        function WebAnimation() {
+          var Webpage = document.querySelector(".Webpage");
+          var textPage = document.querySelector(".Webpages");
+          textPage.classList.add('.hidden');
+          Webpage.classList.add("animate");
+          // Wait for the animation to finish
+          setTimeout(function() {
+            // Load another page
+            
+            window.location.href = "WebPageHub.html";
+          }, 1000); // Wait for 2 seconds (the same duration as the animation)
+        }
+      </script> 
+  <div class="Webpage" style="position: relative" onclick="WebAnimation()">
+   
+    <div class="Webpages" style="font-size:30px">
+        Websites
+
+    </div>
+</div>
    
     
             </body>

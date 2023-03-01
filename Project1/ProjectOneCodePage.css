@@ -1,0 +1,20 @@
+.background{
+    background-color: #2ac4af
+}
+
+
+.box {
+  position: relative;
+  width:fit-content;
+  height: auto;
+  padding: 5px;
+  background-color: rgb(180, 252, 183);
+  margin-bottom: 12px;
+  border: 1px solid rgb(0, 0, 0);
+  border-style: ridge;
+}
+
+.box:hover{
+  color: blue;
+  cursor: pointer;
+}
