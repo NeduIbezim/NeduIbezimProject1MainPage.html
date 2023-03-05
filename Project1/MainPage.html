@@ -19,9 +19,22 @@
           100% { transform: scale(200);}
           
         }
+
+
+        @keyframes WebpageShrink {
+          0% { transform: scale(0); }
+          50% { transform: scale(0);}
+          100% { transform: scale(0);}
+          
+        }
         /* Apply the animation to a class */
         .animate {
           animation: elementAnimated 2s ease-out;
+        }
+
+        .animateWeb {
+          animation: WebpageShrink 0.1s ease-out;
+          opacity: 0;
         }
         /* Define the polygon */
         .element {
@@ -79,9 +92,11 @@
       <script>
         function playAnimation() {
           var element = document.querySelector(".element");
+          var Webpage = document.querySelector(".Webpage");
           var textElem = document.querySelector(".TwoDArt");
           textElem.classList.add('.hidden');
           element.classList.add("animate");
+          Webpage.classList.add("animateWeb");
           // Wait for the animation to finish
           setTimeout(function() {
             // Load another page
@@ -97,7 +112,13 @@
 
 
 
-      <!-- WebPages-------------------------------------------------------------- -->
+      <!-- WebPages------------------------------------------------------------------------------------------------------------------------------------------------------->
+      <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+      <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+      <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+      <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+      <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+
       
 
     <div id="EleTest">
@@ -105,7 +126,8 @@
         /* Define the animation */
         @keyframes WebpageAnimated {
           0% { transform: scale(1); }
-          50% { transform: scale(200);}
+          10% { transform: scale(0.5);}
+          50% { transform: scale(20);}
           100% { transform: scale(200);}
           
         }
@@ -116,42 +138,63 @@
           100% { transform: scale(0);}
           
         }
+
+        @keyframes TextShrink {
+          0% { opacity: 1;}
+          20% { opacity: .7;}
+          100% { opacity: 0;}
+          
+        }
         /* Apply the animation to a class */
-        .animate {
+        .Webanimate {
           animation: WebpageAnimated 2s ease-out;
+        }
+        .Textanimate {
+          animation: TextShrink 0.4s ease-out;
+          opacity: 0;
         }
         /* Define the polygon */
         .Webpage {
-            background-color: hsl(59, 100%, 78%);
-    color: white;
-    width: 500px; 
-    height: 300px;
-    margin: 500px 200px;
-    transition:all 0.1s ease; 
-    text-align:center;
-    position: relative;
+            background-color: hsl(59, 94%, 80%);
+            color: white;
+            width: 500px; 
+            height: 300px;
+            margin: 500px 200px;
+            transition:all 0.5s ease; 
+            text-align:center;
+            position: relative;
     
     shape-padding: 20px;
     
-    -webkit-clip-path: polygon(0 0,  500px 0, 350px 500px, 150px 200px);
+    -webkit-clip-path: polygon(0 0,  500px 0, 350px 500px, 0px 200px);
         }
 
         .Webpage:hover{
-            background-color: #fffb15;
+            background-color: #ffed47;
             color: rgb(180, 99, 255);
+            font-size: 50px;
+            -webkit-clip-path: polygon(10px 10px,  510px 10px, 390px 510px, 10px 210px);
         
             cursor: pointer;
         }
         .Webpage:hover{
        
-            rotate: 30deg ;
+            rotate: 5deg ;
      
         }
 
 
-        .hidden {
-            display: hidden;
-        }
+        .WebPages{
+    font-size:larger;
+    font-family:  "Comic Sans MS", "Comic Sans", cursive;
+    position: relative; 
+    bottom: -100px; 
+    
+
+}
+
+
+       
 
       </style>
       </div>
@@ -161,8 +204,8 @@
         function WebAnimation() {
           var Webpage = document.querySelector(".Webpage");
           var textPage = document.querySelector(".Webpages");
-          textPage.classList.add('.hidden');
-          Webpage.classList.add("animate");
+          textPage.classList.add("Textanimate");
+          Webpage.classList.add("Webanimate");
           // Wait for the animation to finish
           setTimeout(function() {
             // Load another page
@@ -171,12 +214,28 @@
           }, 1000); // Wait for 2 seconds (the same duration as the animation)
         }
       </script> 
+
+
+<!-- <script>
+  function TextAnimation() {
+    var Webpages = document.querySelector(".Webpage");
+    var textPage = document.querySelector(".Webpages");
+    textPage.classList.add("animateText");
+    Webpage.classList.add("Webanimate");
+    // Wait for the animation to finish
+    setTimeout(function() {
+      // Load another page
+      
+      window.location.href = "WebPageHub.html";
+    }, 1000); // Wait for 2 seconds (the same duration as the animation)
+  }
+</script>  -->
   <div class="Webpage" style="position: relative" onclick="WebAnimation()">
    
-    <div class="Webpages" style="font-size:30px">
+    <p class="Webpages" style="font-size:30px">
         Websites
 
-    </div>
+    </p>
 </div>
    
     
