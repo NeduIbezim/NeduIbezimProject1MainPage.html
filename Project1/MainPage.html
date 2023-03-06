@@ -48,7 +48,7 @@
     
     shape-padding: 20px;
     
-    -webkit-clip-path: polygon(0 0,  500px 0, 350px 500px, 150px 200px);
+    -webkit-clip-path: polygon( 450px 700px, 10px 0px, 50px 0,  400px 0);
         }
 
         .element:hover{
@@ -59,7 +59,7 @@
         }
         .element:hover{
         
-            rotate: 30deg ;
+            rotate: -5deg ;
      
         }
 
@@ -73,7 +73,9 @@
     
     
     <body class="pagebackground">
-      <center><h1 style="font-family: cursive; font-size: 40px; color: rgb(187, 127, 255);">Thrmax Productions</h1></center> 
+      
+      <!-- <center><h1 style="font-family: cursive; font-size: 40px; color: rgb(187, 127, 255);">Thrmax Productions</h1></center>  -->
+      <center><h1 class="mintSpecialText">Thrmax Productions</h1></center> 
 
         <div>
 
@@ -101,7 +103,7 @@
           setTimeout(function() {
             // Load another page
             
-            window.location.href = "WebPageHub.html";
+            window.location.href = "Art2D.html";
           }, 500); // Wait for 2 seconds (the same duration as the animation)
         }
       </script>
@@ -135,14 +137,15 @@
         @keyframes WebpageShrink {
           0% { transform: scale(1); }
           50% { transform: scale(0);}
-          100% { transform: scale(0);}
+          100% { opacity: 0; transform: scale(0);}
           
         }
 
         @keyframes TextShrink {
-          0% { opacity: 1;}
-          20% { opacity: .7;}
-          100% { opacity: 0;}
+          0% { opacity: 1; transform: scale(2);}
+         
+          10% { opacity: .7; transform: scale(2);}
+          50% { opacity: 0; transform: scale(2);}
           
         }
         /* Apply the animation to a class */
