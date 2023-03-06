@@ -15,7 +15,8 @@
         /* Define the animation */
         @keyframes elementAnimated {
           0% { transform: scale(1); }
-          50% { transform: scale(100);}
+          10% { transform: scale(0.5);}
+          50% { transform: scale(20);}
           100% { transform: scale(200);}
           
         }
@@ -135,17 +136,18 @@
         }
 
         @keyframes WebpageShrink {
-          0% { transform: scale(1); }
-          50% { transform: scale(0);}
+          0% { opacity: 1; transform: scale(1); }
+          50% { opacity: 1; transform: scale(1);}
           100% { opacity: 0; transform: scale(0);}
           
         }
 
         @keyframes TextShrink {
-          0% { opacity: 1; transform: scale(2);}
+          0% { opacity: 1; transform: scale(1);}
          
-          10% { opacity: .7; transform: scale(2);}
+          10% { opacity: .7; transform: scale(1.5);}
           50% { opacity: 0; transform: scale(2);}
+          100% { opacity: 0; transform: scale(1);}
           
         }
         /* Apply the animation to a class */
