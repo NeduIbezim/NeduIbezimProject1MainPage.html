@@ -112,6 +112,21 @@ function setup() {
   }
 }
 
+function frameRateChange(fr) {
+  let rate = 0;
+  if (fr === 30) {
+    // clr = color(0, 0, 255);
+    rate = Math.floor(Math.random(45, 50) + 2 * 185);
+    // frameRate(fr); // make frameRate 10 FPS
+  } else {
+    // clr = color(rng, rng2, rng3);
+    rate = Math.floor(Math.random(45, 50) + 2 * 185);
+    //frameRate(fr); // make frameRate 30 FPS
+  }
+
+  return fr;
+}
+
 function draw() {
   background(200);
 
@@ -132,23 +147,15 @@ function draw() {
       rectX[i] = 0;
       rectSpeed[i] = Math.floor(Math.random() * 5) + 1;
 
-      // update the color and FPS based on a random value
-      if (fr === 30) {
-        // clr = color(0, 0, 255);
-        fr = Math.floor(Math.random(45, 50) + 2 * 185);
-        frameRate(fr); // make frameRate 10 FPS
-      } else {
-        // clr = color(rng, rng2, rng3);
-        fr = Math.floor(Math.random(45, 50) + 2 * 185);
-        frameRate(fr); // make frameRate 30 FPS
-      }
+      // update the FPS based on a random value
+      frameRate(frameRateChange(fr));
     }
 
-    let YCor = rectY[i];
+    // let YCor = rectY[i];
 
-    while (YCor > 400) {
-      YCor = YCor - 1;
-    }
+    // while (YCor > 400) {
+    //   YCor = YCor - 1;
+    // }
 
     // draw the square
     fill(colors[i]);
