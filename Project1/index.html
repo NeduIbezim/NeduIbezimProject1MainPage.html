@@ -56,7 +56,7 @@
 
     }
 
-    @keyframes TextShrink {
+    @keyframes WebpageShrink {
       0% {
         transform: scale(0);
       }
@@ -129,7 +129,7 @@
 
   <!-- <center><h1 style="font-family: cursive; font-size: 40px; color: rgb(187, 127, 255);">Thrmax Productions</h1></center>  -->
   <center>
-    <h1 class="mintSpecialText">Thrmax Productions</h1>
+    <h1 class="mintSpecialText">Thrmax Productions</h1> <!--title stuff-->
   </center>
 
   <div>
@@ -144,17 +144,23 @@
         </div>
       </div>
 
-
+      <!-- 
+      var Webpage = document.querySelector(".Webpage");
+      var textPage = document.querySelector(".Webpages");
+      textPage.classList.add("Textanimate");
+      Webpage.classList.add("Webanimate"); -->
 
 
       <script>
         function playAnimation() {
+
+
           var element = document.querySelector(".element");
           var Webpage = document.querySelector(".Webpage");
           var textElem = document.querySelector(".TwoDArt");
-          textElem.classList.add('.hidden');
+          textElem.classList.add("animateWeb");
           element.classList.add("animate");
-          Webpage.classList.add("animateWeb");
+          Webpage.classList.add("animateWeb"); //Makes Webpage button disappear 
           // Wait for the animation to finish
           setTimeout(function () {
             // Load another page
@@ -295,6 +301,7 @@
         </style>
       </div>
       </head>
+
 
       <script>
         function WebAnimation() {
