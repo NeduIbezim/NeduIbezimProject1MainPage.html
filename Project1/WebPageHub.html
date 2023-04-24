@@ -5,7 +5,7 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" type="text/css" href="./ProjectOneCodePage.css">
-     <script src="JSProjectOneMainPage"></script>
+     <script src="JSProjectOneWebPage"></script>
 
      <!-- 
      <script>
@@ -13,6 +13,29 @@
                $("#div1").fadeIn();
           });
      </script> -->
+
+     <script type="text/javascript">
+
+          window.onload = fadeIn;
+
+          function fadeIn() {
+               var fade = document.getElementById("body");
+               var opacity = 0;
+               var multiplier = 1;
+               var intervalID = setInterval(function () {
+
+                    if (opacity < 1) {
+                         opacity = opacity + (0.0001 * multiplier)
+                         multiplier = multiplier + 1;
+                         fade.style.opacity = opacity;
+                    } else {
+                         clearInterval(intervalID);
+                    }
+               }, 1);
+          }
+     </script>
+
+
 
      <style>
           body {
@@ -50,6 +73,9 @@
 
 
 </head>
+
+
+
 <center>
      <h1 style="font-family: fantasy; font-size: 40px; color: white;">Webpages</h1>
 </center>
@@ -62,7 +88,7 @@
 
 <div>
 
-     <body style="background-color: #ffed47;">
+     <body id="body" style="background-color: #ffed47; opacity: 0;">
 
           <a href="../Excersizes/Hypertext/Interactive_Story1.html"><button class="box">
                     <p style="font-size: 40px;">Interactive_Story1</p>
