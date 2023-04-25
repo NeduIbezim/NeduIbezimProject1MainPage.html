@@ -1,22 +1,165 @@
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./ProjectOneCodePage.css">
-    <script src="JSProjectOneMainPage"></script>
-    
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" type="text/css" href="./ProjectOneCodePage.css">
+     <script src="JSProjectOneMainPage"></script>
 
-    <title>Project one</title>
-    
+     <script type="text/javascript">
+
+          window.onload = fadeIn;
+
+          function fadeIn() {
+               var fade = document.getElementById("body");
+               var opacity = 0;
+               var multiplier = 1;
+               var intervalID = setInterval(function () {
+
+                    if (opacity < 1) {
+                         opacity = opacity + (0.0001 * multiplier)
+                         multiplier = multiplier * 1.15;
+                         fade.style.opacity = opacity;
+                    } else {
+                         clearInterval(intervalID);
+                    }
+               }, 1);
+          }
+     </script>
+
+</head>
 
 
-    </head>
-    <center><h1 style="font-family: fantasy; font-size: 40px;">2D Art</h1></center> 
+<body style="background-color: #2ac4af;">
 
-     
-         <body style="background-color: #2ac4af;" >
+     <!-- <p style="font-size: 80px;">(W.I.P)</p> -->
+</body>
 
-         <p style="font-size: 80px;">(W.I.P)</p>
-         </body>
-    </html>
+<title>Project one</title>
+
+
+
+<head>
+
+     <style>
+          body {
+               margin: 0;
+               font-family: Arial, Helvetica, sans-serif;
+          }
+
+          .topnav {
+               overflow: hidden;
+               background-color: #333;
+               transform: translateY(-60px);
+          }
+
+          .topnav a {
+               float: left;
+               color: #f2f2f2;
+               text-align: center;
+               padding: 14px 16px;
+               text-decoration: none;
+               font-size: 17px;
+
+          }
+
+          .topnav a:hover {
+               background-color: #727272;
+               color: black;
+
+          }
+
+          .topnav a.active {
+               background-color: #04AA6D;
+               color: white;
+          }
+     </style>
+
+     <style>
+          /* Styles for gallery images */
+          .gallery img {
+               width: 200px;
+               height: 200px;
+               object-fit: cover;
+               margin: 10px;
+               cursor: pointer;
+          }
+
+          /* Styles for full-size image display */
+          #full-img {
+               display: none;
+               position: fixed;
+               top: 0;
+               left: 0;
+               width: 100%;
+               height: 100%;
+               background-color: rgba(0, 0, 0, 0.9);
+               z-index: 999;
+          }
+
+          #full-img img {
+               display: block;
+               max-width: 90%;
+               max-height: 90%;
+               margin: auto;
+               margin-top: 10%;
+          }
+     </style>
+</head>
+
+
+<body id="body">
+
+     <center>
+          <h1
+               style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 80px; color: white;background-color: #333; width:auto; height: 100px;">
+               2D Art Gallery</h1>
+     </center>
+
+     <!-- Top Bar Navigation -->
+     <div class="topnav">
+          <a class="active" href="../Project1/MainPage.html">Hub</a>
+          <a href="./WebPageHub.html">Webpages</a>
+          <!-- <a href="#contact">Contact</a>
+     <a href="#about">About</a> -->
+     </div>
+
+
+     <div class="gallery">
+          <img src="../Images/s1.png" onclick="showFullImg('../Images/s1.png')">
+          <img src="../Images/unknown.png" onclick="showFullImg('../Images/unknown.png')">
+          <img src="../Images/The crew.png" onclick="showFullImg('../Images/The crew.png')">
+          <!-- Add more images here -->
+     </div>
+
+     <div id="full-img"></div>
+
+     <script>
+          function showFullImg(src) {
+               // Get full-size image element
+               var fullImg = document.createElement("img");
+               fullImg.src = src;
+
+               // Get full-size image container element
+               var fullImgContainer = document.getElementById("full-img");
+               fullImgContainer.innerHTML = "";
+               fullImgContainer.appendChild(fullImg);
+
+               // Show full-size image
+               fullImgContainer.style.display = "block";
+          }
+
+          // Hide full-size image when user clicks outside of it
+          var fullImgContainer = document.getElementById("full-img");
+          fullImgContainer.onclick = function () {
+               fullImgContainer.style.display = "none";
+          }
+     </script>
+</body>
+
+
+
+
+
+</html>
