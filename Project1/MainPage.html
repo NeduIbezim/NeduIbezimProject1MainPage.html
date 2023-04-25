@@ -10,118 +10,210 @@
 
   <title>Project one</title>
 
-  <!-- 2D Artwork------------------------------------------------------------------------------------------------------------------------------------------------------->
-  <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
-  <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
-  <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
-  <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
-  <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-  <style>
-    /* Define the animation */
-    @keyframes elementAnimated {
-      0% {
-        transform: scale(1);
+  <head>
+
+    <style>
+      /* body {
+        background: #222;
+        overflow: hidden;
+      } */
+
+      .triangle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 10px 10px 0;
+        animation: fade 10s linear, rotate 5s linear infinite;
+        z-index: -1;
+        /* Set the triangles behind all other elements */
       }
 
-      10% {
-        transform: scale(0.5);
+      @keyframes fade {
+        0% {
+          opacity: 0;
+        }
+
+        60% {
+          opacity: 1;
+        }
+
+        70% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 0;
+        }
       }
 
-      50% {
-        transform: scale(20);
-      }
+      @keyframes rotate {
+        0% {
+          transform: rotate(30deg);
+        }
 
-      100% {
-        transform: scale(200);
+        100% {
+          transform: rotate(360deg);
+        }
       }
+    </style>
+  </head>
 
+<body>
+  <script>
+    function getRandomColor() {
+      // Define a range of colors to choose from
+      var colors = [' #FF0000', '#00FF00', '#0000FF', '#FFFF00', '#00FFFF', '#FF00FF'];
+
+      // Get a random index within the range of colors
+      var randomIndex = Math.floor(Math.random() * colors.length);
+
+      // Return the color at the random index
+      return colors[randomIndex];
     }
 
-    @keyframes TextShrink {
-      0% {
-        opacity: 1;
-        transform: scale(1);
-      }
+    function createTriangle() {
+      var triangle = document.createElement('div');
+      triangle.classList.add('triangle');
+      triangle.style.borderColor = 'transparent transparent ' + getRandomColor() + ' transparent';
+      triangle.style.top = Math.floor(Math.random() * window.innerHeight) + 'px';
+      triangle.style.left = Math.floor(Math.random() * window.innerWidth) + 'px';
+      triangle.style.animationDelay = Math.random() * 2 + 's';
+      document.body.appendChild(triangle);
 
-      50% {
-        opacity: 1;
-        transform: scale(1);
-      }
+      // Remove the triangle from the DOM after it fades out
+      triangle.addEventListener('animationend', function () {
+        triangle.parentNode.removeChild(triangle);
+      });
 
-      100% {
-        opacity: 0;
-        transform: scale(0);
-      }
-
+      // Create a new triangle at a new random position after it fades out
+      setTimeout(function () {
+        createTriangle();
+      }, Math.random() * 12000);
     }
 
-    @keyframes WebpageShrink {
-      0% {
-        transform: scale(0);
-      }
+    // Create and add triangles to the background
+    for (var i = 0; i < 20; i++) {
+      createTriangle();
+    }
+  </script>
+</body>
 
-      50% {
-        transform: scale(0);
-      }
+<!-- 2D Artwork------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-      100% {
-        transform: scale(0);
-      }
-
+<style>
+  /* Define the animation */
+  @keyframes elementAnimated {
+    0% {
+      transform: scale(1);
     }
 
-    /* Apply the animation to a class */
-    .animate {
-      animation: elementAnimated 2s ease-out;
+    10% {
+      transform: scale(0.5);
     }
 
-    .animateWeb {
-      animation: WebpageShrink 0.1s ease-out;
+    50% {
+      transform: scale(20);
+    }
+
+    100% {
+      transform: scale(200);
+    }
+
+  }
+
+  @keyframes TextShrink {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    100% {
       opacity: 0;
+      transform: scale(0);
     }
 
-    .Textanimate {
-      animation: TextShrink 0.4s ease-out;
-      opacity: 0;
+  }
+
+  @keyframes WebpageShrink {
+    0% {
+      transform: scale(0);
     }
 
-    /* Define the polygon */
-    .element {
-      background-color: #16a085;
-      color: white;
-      width: 500px;
-      height: 300px;
-      margin: 300px 20px;
-      right: -1000px;
-      transition: 0.5s ease;
-      text-align: center;
-
-      shape-padding: 20px;
-
-      -webkit-clip-path: polygon(450px 700px, 10px 0px, 50px 0, 400px 0);
+    50% {
+      transform: scale(0);
     }
 
-    .element:hover {
-      background-color: #2ac4af;
-      color: rgb(245, 255, 99);
-      -webkit-clip-path: polygon(380px 700px, 20px 100px, 50px 0, 400px 0);
-
-      cursor: pointer;
+    100% {
+      transform: scale(0);
     }
 
-    .element:hover {
+  }
 
-      rotate: -5deg;
+  /* Apply the animation to a class */
+  .animate {
+    animation: elementAnimated 2s ease-out;
+  }
+
+  .animateWeb {
+    animation: WebpageShrink 0.1s ease-out;
+    opacity: 0;
+  }
+
+  .Textanimate {
+    animation: TextShrink 0.4s ease-out;
+    opacity: 0;
+  }
+
+  /* Define the polygon */
+  .element {
+    background-color: #16a085;
+    color: white;
+    width: 500px;
+    height: 300px;
+    margin: 300px 20px;
+    right: -1000px;
+    transition: 0.5s ease;
+    text-align: center;
+
+    shape-padding: 20px;
+
+    -webkit-clip-path: polygon(450px 700px, 10px 0px, 50px 0, 400px 0);
+  }
+
+  .element:hover {
+    background-color: #2ac4af;
+    color: rgb(245, 255, 99);
+    -webkit-clip-path: polygon(380px 700px, 20px 100px, 50px 0, 400px 0);
+
+    cursor: pointer;
+  }
+
+  .element:hover {
+
+    rotate: -5deg;
 
 
-    }
+  }
 
 
-    .hidden {
-      display: hidden;
-    }
-  </style>
+  .hidden {
+    display: hidden;
+  }
+</style>
 </head>
 
 
